@@ -16,7 +16,7 @@ class RecommendCycleView: UIView {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
     
-    var cycleModels : [CycleModel]? {
+    var cycleModels : [slideListModel]? {
         
         didSet {
             // 1.刷新collectionView
@@ -77,7 +77,6 @@ extension RecommendCycleView : UICollectionViewDataSource {
         print("----cyc-------\(String(describing: cycleModels?.count))")
         
          return (cycleModels?.count ?? 0)
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -85,6 +84,7 @@ extension RecommendCycleView : UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCellID, for: indexPath) as! CollectionViewCycleCell
         
         cell.cycleModel = cycleModels![indexPath.item]
+        
         
         return cell
     }

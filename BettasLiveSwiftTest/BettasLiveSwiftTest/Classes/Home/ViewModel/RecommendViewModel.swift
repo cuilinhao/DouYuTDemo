@@ -22,7 +22,7 @@ class RecommendViewModel: NSObject {
     private lazy var bigDataGroup : AnchorGroupModel = AnchorGroupModel()
     private lazy var perttyGroup : AnchorGroupModel = AnchorGroupModel()
     
-     lazy var cycleGroup : [CycleModel] = [CycleModel]()
+     lazy var cycleGroup : [slideListModel] = [slideListModel]()
 }
 
 
@@ -172,6 +172,25 @@ extension RecommendViewModel {
             
              print("+++++>>>>>>>>>+0000++\(dict)")
             
+            
+            /*
+             guard let dataArray = resultDic["data"] as? [[String : Any]]  else {
+             return
+             }
+             
+             for dict in dataArray {
+             let group = AnchorGroupModel(dict: dict)
+             self.anchorGroup.append(group)
+             }
+             
+             for group in self.anchorGroup {
+             for anchor in group.anchors {
+             print("++++++++" + anchor.nickname)
+             }
+             }
+             
+             */
+            
             guard let dataDic = dict["data"] as? [String : Any] else {
                 return
             }
@@ -179,10 +198,10 @@ extension RecommendViewModel {
             guard let dataArray = dataDic["slide_list"] as? [[String : Any]] else {
                 return
             }
-            
+
             for dic in dataArray {
-                
-                let group = CycleModel(dict: dic as! [String : NSObject])
+
+                let group = slideListModel(dict: dic as! [String : NSObject])
                 self.cycleGroup.append(group)
             }
             

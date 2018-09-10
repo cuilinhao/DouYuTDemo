@@ -90,6 +90,8 @@ class slideListModel: NSObject {
     /// 房间图片对应的URLString
     @objc var title : String = ""
     
+    @objc var vertical_src : String = ""
+    
     
     
     init(dict : [String : NSObject]) {

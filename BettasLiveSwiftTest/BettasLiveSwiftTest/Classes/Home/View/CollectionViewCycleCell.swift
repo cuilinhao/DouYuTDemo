@@ -18,22 +18,22 @@ class CollectionViewCycleCell: UICollectionViewCell {
     @IBOutlet weak var cycleTitleLab: UILabel!
     
     //MARK:- 定义模型属性
-    var cycleModel : CycleModel? {
+    var cycleModel : slideListModel? {
         
         didSet {
             
             cycleTitleLab.text = cycleModel?.title
             
-            guard let iconURL = NSURL(string: (cycleModel?.resource)!) else {
+            guard let iconURL = URL(string: (cycleModel?.resource)!) else {
                 return
             }
-            
-            cycleBGImg.kf.setImage(with: iconURL as? Resource)
-            
-            
-            
+            cycleBGImg.kf.setImage(with: iconURL)
+
         }
     }
+    
+    
+    
     
     
 
