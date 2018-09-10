@@ -114,7 +114,11 @@ extension RecommendViewController {
          //请求轮播数据
         recomendViewModel.requestCycleData {
             
-            print("请求轮播数据完成")
+            //self.cycleView.cycleModels = self.recommendVM.cycleModels
+            
+            self.cycleView.cycleModels = self.recomendViewModel.cycleGroup
+            
+            print("请求轮播数据完成----\(String(describing: self.cycleView.cycleModels?.count))")
         }
     }
     

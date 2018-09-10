@@ -23,12 +23,12 @@ class CycleModel: NSObject {
             guard let room = room else {
                 return
             }
-            anchor = AnchorModel(dict: room)
+            anchor = slideListModel(dict: room)
         }
     }
 
     //主播信息对应的模型对象
-    var anchor : AnchorModel?
+    var anchor : slideListModel?
 
     //MARK:- 自定义构造函数
     init(dict : [String : NSObject]) {
@@ -38,6 +38,7 @@ class CycleModel: NSObject {
     }
 
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
+        
     }
 
 

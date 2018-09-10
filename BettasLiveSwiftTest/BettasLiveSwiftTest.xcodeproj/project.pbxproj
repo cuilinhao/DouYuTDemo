@@ -32,6 +32,8 @@
 		70A7DA08214605010077A907 /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A7D9FD214605010077A907 /* NSDate-Extension.swift */; };
 		70A7DA09214605010077A907 /* SwiftProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A7D9FE214605010077A907 /* SwiftProgressHUD.swift */; };
 		70A7DA0A214605010077A907 /* ZJProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A7D9FF214605010077A907 /* ZJProgressHUD.swift */; };
+		70A7DA0D21460B8D0077A907 /* CollectionViewCycleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A7DA0B21460B8D0077A907 /* CollectionViewCycleCell.swift */; };
+		70A7DA0E21460B8D0077A907 /* CollectionViewCycleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A7DA0C21460B8D0077A907 /* CollectionViewCycleCell.xib */; };
 		70B62E362135781900E88A67 /* CollectionReusableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B62E342135781900E88A67 /* CollectionReusableHeaderView.swift */; };
 		70B62E372135781900E88A67 /* CollectionReusableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70B62E352135781900E88A67 /* CollectionReusableHeaderView.xib */; };
 		70B62E402136324600E88A67 /* CollectionViewPerttyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B62E3E2136324600E88A67 /* CollectionViewPerttyCell.swift */; };
@@ -75,6 +77,8 @@
 		70A7D9FD214605010077A907 /* NSDate-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate-Extension.swift"; sourceTree = "<group>"; };
 		70A7D9FE214605010077A907 /* SwiftProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftProgressHUD.swift; sourceTree = "<group>"; };
 		70A7D9FF214605010077A907 /* ZJProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJProgressHUD.swift; sourceTree = "<group>"; };
+		70A7DA0B21460B8D0077A907 /* CollectionViewCycleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCycleCell.swift; sourceTree = "<group>"; };
+		70A7DA0C21460B8D0077A907 /* CollectionViewCycleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCycleCell.xib; sourceTree = "<group>"; };
 		70B62E342135781900E88A67 /* CollectionReusableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionReusableHeaderView.swift; sourceTree = "<group>"; };
 		70B62E352135781900E88A67 /* CollectionReusableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionReusableHeaderView.xib; sourceTree = "<group>"; };
 		70B62E3E2136324600E88A67 /* CollectionViewPerttyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewPerttyCell.swift; sourceTree = "<group>"; };
@@ -234,6 +238,8 @@
 				70B62E352135781900E88A67 /* CollectionReusableHeaderView.xib */,
 				708B9790213781E500306476 /* RecommendCycleView.swift */,
 				708B97922137820B00306476 /* RecommendCycleView.xib */,
+				70A7DA0B21460B8D0077A907 /* CollectionViewCycleCell.swift */,
+				70A7DA0C21460B8D0077A907 /* CollectionViewCycleCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -481,6 +487,7 @@
 				70FE4C78212BADFD005773FF /* Images.xcassets in Resources */,
 				70FE4C1D212A7141005773FF /* LaunchScreen.storyboard in Resources */,
 				70B62E372135781900E88A67 /* CollectionReusableHeaderView.xib in Resources */,
+				70A7DA0E21460B8D0077A907 /* CollectionViewCycleCell.xib in Resources */,
 				70FE4C6C212BA57C005773FF /* Live.storyboard in Resources */,
 				7059E942213CE16F0067AE6D /* CollectionViewNormalCell.xib in Resources */,
 				70FE4C1A212A7141005773FF /* Assets.xcassets in Resources */,
@@ -567,6 +574,7 @@
 				70A7DA03214605010077A907 /* ZJImageView+Kingfisher.swift in Sources */,
 				70A7DA01214605010077A907 /* UIColor-Extension.swift in Sources */,
 				7083D974212C3BE70094624C /* HomeViewController.swift in Sources */,
+				70A7DA0D21460B8D0077A907 /* CollectionViewCycleCell.swift in Sources */,
 				70B62E362135781900E88A67 /* CollectionReusableHeaderView.swift in Sources */,
 				70A7DA04214605010077A907 /* ZJView-Extension.swift in Sources */,
 				708B9797213787A600306476 /* RecommendViewModel.swift in Sources */,

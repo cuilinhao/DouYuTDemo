@@ -16,19 +16,18 @@ class RecommendCycleView: UIView {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
     
+    var cycleModels : [CycleModel]? {
+        
+        didSet {
+            // 1.刷新collectionView
+            collectionView.reloadData()
+        }
+        
+    }
     
     //MARK:- 定义属性
     var cycleTimer : Timer?
-    open var imageURLStringsGroup = [String](){ //设置网络图片地址数组,并刷新Collectionview
-        didSet {
-            //imagePathsGroup = imageURLStringsGroup
-        }
-    }
-    open var imageNamesGroup = [String](){//设置本地图片名称数组,并刷新Collectionview
-        didSet {
-            //imagePathsGroup = imageNamesGroup
-        }
-    }
+    
     
     
     override func awakeFromNib() {
@@ -38,9 +37,10 @@ class RecommendCycleView: UIView {
         autoresizingMask = UIViewAutoresizing()
         
         //注册Cell
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kCellID)
-        collectionView.dataSource = self
+        //collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kCellID)
+        collectionView.register(UINib(nibName: "CollectionViewCycleCell", bundle: nil), forCellWithReuseIdentifier: kCellID)
         
+        collectionView.dataSource = self
     }
     
     override func layoutSubviews() {
@@ -55,7 +55,6 @@ class RecommendCycleView: UIView {
         layout.scrollDirection = .horizontal
         
         collectionView.isPagingEnabled = true
-        
     }
     
 }
@@ -73,21 +72,19 @@ extension RecommendCycleView {
 
 extension RecommendCycleView : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        //return 6
+        
+        print("----cyc-------\(String(describing: cycleModels?.count))")
+        
+         return (cycleModels?.count ?? 0)
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCellID, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCellID, for: indexPath) as! CollectionViewCycleCell
         
-        if indexPath.row % 2 == 0
-        {
-            cell.backgroundColor = UIColor.red
-        }
-        else
-        {
-            cell.backgroundColor = UIColor.orange
-        }
+        cell.cycleModel = cycleModels![indexPath.item]
         
         return cell
     }

@@ -65,3 +65,40 @@ class AnchorModel: NSObject {
     }
     
 }
+
+
+class slideListModel: NSObject {
+    
+    /*
+     "slide_list" =     (
+     {
+     "cate_id" = 1;
+     isVertical = 0;
+     "is_room_show" = 0;
+     level = 0;
+     link = 288016;
+     "link_type" = 0;
+     nrt = 0;
+     resource = "https://sta-op.douyucdn.cn/dypart/2018/09/01/cc710365d3cabf0d0687a76e24299fa0.jpg";
+     title = "\U82f1\U96c4\U8054\U76df";
+     "vertical_src" = "https://rpic.douyucdn.cn/asrpic/180910/288016_1056.jpg";
+     },
+     */
+    
+    /// 房间ID
+    @objc var resource : String = ""
+    /// 房间图片对应的URLString
+    @objc var title : String = ""
+    
+    
+    
+    init(dict : [String : NSObject]) {
+        super.init()
+        setValuesForKeys(dict)
+    }
+    override func setValue(_ value: Any?, forUndefinedKey key: String) {
+        
+    }
+    
+    
+}

@@ -23,12 +23,10 @@ class RecommendViewModel: NSObject {
     private lazy var perttyGroup : AnchorGroupModel = AnchorGroupModel()
     
      lazy var cycleGroup : [CycleModel] = [CycleModel]()
-    
 }
 
 
 //MARK:- 发送网络数据
-
 extension RecommendViewModel {
     
      func getCurrentTime() -> String {
@@ -154,7 +152,6 @@ extension RecommendViewModel {
          //ZJNetWorking.requestData(type: .GET, URlString: ZJCateBannerURL, parameters: ["version" : "2.300"]) { (response) in
          //print("+++++++++轮播数据+++111++\(response)")
          //}
-
         
         // 配置 HTTPHeaders
         let headers: HTTPHeaders = [
@@ -164,8 +161,6 @@ extension RecommendViewModel {
         
         Alamofire.request(ZJCateBannerURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
         
-            
-            
             guard let result = response.result.value else {
                 print(response.result.error ?? "错误")
                 return
@@ -190,6 +185,9 @@ extension RecommendViewModel {
                 let group = CycleModel(dict: dic as! [String : NSObject])
                 self.cycleGroup.append(group)
             }
+            
+            print("------ccccc-----\(self.cycleGroup.count)")
+            
             
             finishCallback()
         }
