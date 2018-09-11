@@ -42,7 +42,7 @@ class RecommendViewController: UIViewController {
     private lazy var cycleView : RecommendCycleView = {
         
        let cycleView = RecommendCycleView.recommendCycleView()
-        cycleView.frame = CGRect(x: 0, y: -kCycleViewH, width: kScreenW, height: kCycleViewH)
+        cycleView.frame = CGRect(x: 0, y: -(kCycleViewH + kGameViewH), width: kScreenW, height: kCycleViewH)
   
         return cycleView
     }()
@@ -86,13 +86,25 @@ class RecommendViewController: UIViewController {
         
     }()
     
+    //游戏的view
+    private lazy var gameView : RecommendGameView = {
+        let gameView = RecommendGameView.recommendGameView()
+        
+        gameView.frame = CGRect(x: 0, y: -kGameViewH, width: kScreenW, height: kGameViewH)
+        
+        return gameView
+        
+    }()
+    
     //MARK:- life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.red
         collectionView.addSubview(cycleView)
-        collectionView.contentInset = UIEdgeInsetsMake(kCycleViewH , 0, 0, 0)
+        collectionView.addSubview(gameView)
+        
+        collectionView.contentInset = UIEdgeInsetsMake(kCycleViewH + kGameViewH , 0, 0, 0)
         
         setupUI()
         loadData()
@@ -109,6 +121,23 @@ extension RecommendViewController {
         
         recomendViewModel.requestData {
             self.collectionView.reloadData()
+            
+            // 2.将数据传递给GameView
+            var groups = self.recomendViewModel.anchorGroup
+            
+            // 2.1.移除前两组数据
+            groups.removeFirst()
+            groups.removeFirst()
+            
+            // 2.2.添加更多组
+            let moreGroup = AnchorGroupModel()
+            moreGroup.tag_name = "更多"
+            groups.append(moreGroup)
+            
+            self.gameView.gameGroup = groups
+            
+            print("---game data---->>>\(groups.count)")
+            
         }
         
          //请求轮播数据

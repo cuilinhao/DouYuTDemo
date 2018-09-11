@@ -16,20 +16,30 @@ class RecommendCycleView: UIView {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
     
+    var cycleTimer : Timer?
+    
+    
     var cycleModels : [slideListModel]? {
         
         didSet {
-            // 1.刷新collectionView
+            // 刷新collectionView
             collectionView.reloadData()
+            
+            //设置pageControlle个数
+            pageControl.numberOfPages = cycleModels?.count ?? 0
+            
+            //默认滚动到中间的某一个位置
+            let indexPath = NSIndexPath(item: (cycleModels?.count ?? 0) * 10, section: 0)
+            collectionView.scrollToItem(at: indexPath as IndexPath, at: .left, animated: false)
+            
+            //添加定时器
+            removeCycleTimer()
+            addCycleTimer()
         }
         
     }
     
     //MARK:- 定义属性
-    var cycleTimer : Timer?
-    
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -41,10 +51,10 @@ class RecommendCycleView: UIView {
         collectionView.register(UINib(nibName: "CollectionViewCycleCell", bundle: nil), forCellWithReuseIdentifier: kCellID)
         
         collectionView.dataSource = self
+        collectionView.delegate = self
     }
     
     override func layoutSubviews() {
-        
         super.layoutSubviews()
         
      //设置layout
@@ -59,6 +69,53 @@ class RecommendCycleView: UIView {
     
 }
 
+
+//MARK:- 实现滚动
+//MARK:- UICollectionViewDelegate
+extension RecommendCycleView : UICollectionViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        //获取滚动的偏移量
+        let offsetX = scrollView.contentOffset.x + scrollView.bounds.width * 0.5
+        //计算pageControl的currentIndex
+        pageControl.currentPage = Int(offsetX / scrollView.bounds.width) % (cycleModels?.count ?? 1)
+    }
+    
+    //--- 用户拖拽时， 处理定时器
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        removeCycleTimer()
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        addCycleTimer()
+    }
+    
+}
+
+//MARK:- 定时器处理
+extension RecommendCycleView {
+    private func addCycleTimer() {
+        cycleTimer = Timer(timeInterval: 2.0, target: self, selector: #selector(scrollToNext), userInfo: nil, repeats: true)
+        RunLoop.main.add(cycleTimer!, forMode: .defaultRunLoopMode)
+    }
+    
+    private func removeCycleTimer() {
+        cycleTimer?.invalidate()
+        cycleTimer = nil
+        
+    }
+    
+   @objc private func scrollToNext()  {
+    
+    //获取滚动偏移量
+    let currentOffsetX = collectionView.contentOffset.x
+    let offsetX = currentOffsetX + collectionView.bounds.width
+    
+    //滚动该位置
+    collectionView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: true)
+    }
+}
+
 //MARK:- 提供一个类方法
 extension RecommendCycleView {
     class func recommendCycleView() -> RecommendCycleView {
@@ -69,26 +126,24 @@ extension RecommendCycleView {
 }
 
 //MARK:- UICollectionView DataSource
-
 extension RecommendCycleView : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //return 6
-        
-        print("----cyc-------\(String(describing: cycleModels?.count))")
-        
-         return (cycleModels?.count ?? 0)
+        // *1000 实现无线滚动
+         return (cycleModels?.count ?? 0) * 10000
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCellID, for: indexPath) as! CollectionViewCycleCell
-        
-        cell.cycleModel = cycleModels![indexPath.item]
+        //% cycleModels!.count防止越界 循环滚动 1000个cell
+        cell.cycleModel = cycleModels![indexPath.item % cycleModels!.count]
         
         
         return cell
     }
 }
+
 
 
 
