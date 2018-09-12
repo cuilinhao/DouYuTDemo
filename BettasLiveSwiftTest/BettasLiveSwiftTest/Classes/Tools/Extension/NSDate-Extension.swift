@@ -10,7 +10,7 @@ import Foundation
 
 
 extension Date {
-    
+    //Date 是结构体 所以扩展用stastic
     static func getCurrentTime() -> String {
         let nowDate = Date()
         
