@@ -13,42 +13,55 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CollectionViewGameCell" customModule="BettasLiveSwiftTest" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+            <rect key="frame" x="0.0" y="0.0" width="85" height="100"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                <rect key="frame" x="0.0" y="0.0" width="85" height="100"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="王者荣耀" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YaJ-lV-tcI">
-                        <rect key="frame" x="0.0" y="59" width="80" height="21"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Img_default" translatesAutoresizingMaskIntoConstraints="NO" id="e6N-j9-0he">
+                        <rect key="frame" x="17.5" y="18" width="50" height="50"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="VRL-Oz-VQw"/>
+                            <constraint firstAttribute="width" constant="50" id="Yts-xY-LhE"/>
+                            <constraint firstAttribute="height" constant="50" id="cqs-mz-AaZ"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kzg-kS-1O4">
+                        <rect key="frame" x="0.0" y="99" width="85" height="1"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="RYf-dm-bnC"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="王者荣耀" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YaJ-lV-tcI">
+                        <rect key="frame" x="22" y="75" width="41" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="12" id="Euc-FV-EAm"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" red="1" green="0.44193798849999999" blue="0.41984353250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Img_default" translatesAutoresizingMaskIntoConstraints="NO" id="e6N-j9-0he">
-                        <rect key="frame" x="15" y="0.0" width="50" height="50"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="50" id="0jt-ds-4LZ"/>
-                            <constraint firstAttribute="height" constant="50" id="p4K-6t-pVU"/>
-                        </constraints>
-                    </imageView>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="YaJ-lV-tcI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="K6w-yG-mQX"/>
-                <constraint firstItem="e6N-j9-0he" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="aXt-QL-5hu"/>
-                <constraint firstAttribute="trailing" secondItem="YaJ-lV-tcI" secondAttribute="trailing" id="gOQ-Ur-Ggl"/>
-                <constraint firstItem="e6N-j9-0he" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="mUZ-yp-Uyq"/>
-                <constraint firstAttribute="bottom" secondItem="YaJ-lV-tcI" secondAttribute="bottom" id="mf0-7v-sRh"/>
+                <constraint firstAttribute="trailing" secondItem="kzg-kS-1O4" secondAttribute="trailing" id="7yn-A6-p6p"/>
+                <constraint firstItem="YaJ-lV-tcI" firstAttribute="top" secondItem="e6N-j9-0he" secondAttribute="bottom" constant="7" id="A6K-Lv-GiO"/>
+                <constraint firstItem="e6N-j9-0he" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" constant="-7" id="FBc-hS-UXL"/>
+                <constraint firstItem="YaJ-lV-tcI" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="KAa-W0-izu"/>
+                <constraint firstAttribute="bottom" secondItem="kzg-kS-1O4" secondAttribute="bottom" id="Qa0-zn-Dxo"/>
+                <constraint firstItem="e6N-j9-0he" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="gPE-Rv-DvB"/>
+                <constraint firstItem="kzg-kS-1O4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="pwQ-EL-fn8"/>
+                <constraint firstItem="e6N-j9-0he" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="sE5-mz-NAz"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="85" height="100"/>
             <connections>
                 <outlet property="gLabel" destination="YaJ-lV-tcI" id="4v1-CF-YiX"/>
                 <outlet property="gameImg" destination="e6N-j9-0he" id="krs-wt-GhH"/>
+                <outlet property="lineView" destination="kzg-kS-1O4" id="BRL-b9-Dsl"/>
             </connections>
+            <point key="canvasLocation" x="36.5" y="64"/>
         </collectionViewCell>
     </objects>
     <resources>

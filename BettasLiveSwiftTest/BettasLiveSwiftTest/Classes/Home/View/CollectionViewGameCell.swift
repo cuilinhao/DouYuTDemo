@@ -14,6 +14,7 @@ class CollectionViewGameCell: UICollectionViewCell {
     @IBOutlet weak var gLabel: UILabel!
     @IBOutlet weak var gameImg: UIImageView!
     
+    @IBOutlet weak var lineView: UIView!
     
     //MARK:- 定义模型属性
     var group : AnchorGroupModel? {
