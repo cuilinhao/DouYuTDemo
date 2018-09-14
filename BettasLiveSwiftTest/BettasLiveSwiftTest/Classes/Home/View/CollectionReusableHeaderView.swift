@@ -21,7 +21,7 @@ class CollectionReusableHeaderView: UICollectionReusableView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        self.backgroundColor = UIColor.green
     }
     
 }

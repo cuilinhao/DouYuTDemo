@@ -30,7 +30,6 @@ private let kHeaderH : CGFloat = 50
 class RecommendViewController: UIViewController {
 
     //MARK:- lazy
-    
     private lazy var recomendViewModel : RecommendViewModel = {
         
         let recomendViewModel = RecommendViewModel()
