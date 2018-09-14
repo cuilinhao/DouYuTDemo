@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AnchorGroupModel : NSObject {
+class AnchorGroupModel : BaseGameModel {
     
     /*
      
@@ -56,9 +56,9 @@ class AnchorGroupModel : NSObject {
      */
     
     //组显示的标题
-   @objc var tag_name : String = ""
+   //@objc var tag_name : String = ""
     //组显示的图标
-   @objc var icon_url : String = ""
+   //@objc var icon_url : String = ""
     
     //--定义主播的模型对象数组----
     lazy var anchors : [AnchorModel] = [AnchorModel]()
@@ -76,19 +76,7 @@ class AnchorGroupModel : NSObject {
         }
     }
     
-    override init() {
-        
-    }
     
-    init(dict : [String : Any ]) {
-        super.init()
-        
-        setValuesForKeys(dict)
-    }
-    
-    override func setValue(_ value: Any?, forUndefinedKey key: String) {
-        
-    }
     
     /*
     override func setValue(_ value: Any?, forKeyPath keyPath: String) {

@@ -20,7 +20,9 @@ class RecommendViewModel: NSObject {
     // 0组和1组放到最前面 然后是 2- 12 组
      lazy var anchorGroup : [AnchorGroupModel] = [AnchorGroupModel]()
     private lazy var bigDataGroup : AnchorGroupModel = AnchorGroupModel()
+    
     private lazy var perttyGroup : AnchorGroupModel = AnchorGroupModel()
+    
     
      lazy var cycleGroup : [slideListModel] = [slideListModel]()
 }

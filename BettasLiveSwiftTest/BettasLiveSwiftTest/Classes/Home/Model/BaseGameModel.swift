@@ -12,6 +12,7 @@ class BaseGameModel: NSObject {
 
    @objc var tag_name : String = ""
    @objc var pic_url : String = ""
+   @objc var icon_url : String = ""
     
     init(dict : [String : Any]) {
         super.init()
@@ -20,6 +21,10 @@ class BaseGameModel: NSObject {
     }
     
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
+        
+    }
+    
+    override init() {
         
     }
     

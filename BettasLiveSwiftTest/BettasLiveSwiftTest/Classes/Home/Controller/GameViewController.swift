@@ -132,6 +132,8 @@ extension GameViewController : UICollectionViewDataSource , UICollectionViewDele
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: gameCell, for: indexPath) as! CollectionViewGameCell
         cell.group = self.gameGroup![indexPath.item]
         
+        
+        
         return cell
     }
     
