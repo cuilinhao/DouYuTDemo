@@ -15,6 +15,7 @@ class GameHeaderView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         autoresizingMask = UIViewAutoresizing()
+        /*
         collectionView.delegate = self
         collectionView.dataSource = self
         //collectionView.isSpringLoaded = true
@@ -29,9 +30,12 @@ class GameHeaderView: UIView {
         
         //注册cell
         collectionView.register(UINib(nibName: "CollectionViewGameCell", bundle: nil), forCellWithReuseIdentifier: "kGameCell")
+         */
+        
     }
 }
 
+/*
 extension GameHeaderView : UICollectionViewDelegate {
     
 }
@@ -53,11 +57,14 @@ extension GameHeaderView : UICollectionViewDataSource {
     
 }
 
+ */
+
 extension GameHeaderView {
     
     class func gameHeaderView() -> GameHeaderView {
         return Bundle.main.loadNibNamed("GameHeaderView", owner: nil, options: nil)?.first as! GameHeaderView
     }
 }
+
 
 
