@@ -23,6 +23,10 @@ extension GameViewModel {
             guard let resultDict = result as? [String : Any] else {
                 return
             }
+            
+            print("--------vvv-------\(resultDict)")
+            
+            
             guard let dataArray = resultDict["data"] as? [[String : Any]] else {
                 return
             }

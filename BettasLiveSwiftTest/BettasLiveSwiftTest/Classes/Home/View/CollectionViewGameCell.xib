@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,10 +27,10 @@
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kzg-kS-1O4">
-                        <rect key="frame" x="0.0" y="99" width="85" height="1"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <rect key="frame" x="0.0" y="99.5" width="85" height="0.5"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="1" id="RYf-dm-bnC"/>
+                            <constraint firstAttribute="height" constant="0.5" id="a4E-ZG-wqJ"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="王者荣耀" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YaJ-lV-tcI">
@@ -44,15 +44,16 @@
                     </label>
                 </subviews>
             </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="kzg-kS-1O4" secondAttribute="trailing" id="7yn-A6-p6p"/>
+                <constraint firstAttribute="bottom" secondItem="kzg-kS-1O4" secondAttribute="bottom" id="50C-gl-CLc"/>
+                <constraint firstItem="kzg-kS-1O4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="5cb-ef-oT3"/>
                 <constraint firstItem="YaJ-lV-tcI" firstAttribute="top" secondItem="e6N-j9-0he" secondAttribute="bottom" constant="7" id="A6K-Lv-GiO"/>
                 <constraint firstItem="e6N-j9-0he" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" constant="-7" id="FBc-hS-UXL"/>
                 <constraint firstItem="YaJ-lV-tcI" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="KAa-W0-izu"/>
-                <constraint firstAttribute="bottom" secondItem="kzg-kS-1O4" secondAttribute="bottom" id="Qa0-zn-Dxo"/>
                 <constraint firstItem="e6N-j9-0he" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="gPE-Rv-DvB"/>
-                <constraint firstItem="kzg-kS-1O4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="pwQ-EL-fn8"/>
                 <constraint firstItem="e6N-j9-0he" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="sE5-mz-NAz"/>
+                <constraint firstAttribute="trailing" secondItem="kzg-kS-1O4" secondAttribute="trailing" id="vgi-Ze-qaB"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="85" height="100"/>
@@ -61,7 +62,7 @@
                 <outlet property="gameImg" destination="e6N-j9-0he" id="krs-wt-GhH"/>
                 <outlet property="lineView" destination="kzg-kS-1O4" id="BRL-b9-Dsl"/>
             </connections>
-            <point key="canvasLocation" x="36.5" y="64"/>
+            <point key="canvasLocation" x="36" y="63.868065967016499"/>
         </collectionViewCell>
     </objects>
     <resources>

@@ -16,6 +16,10 @@ private let kItemH : CGFloat = kItemW * 6 / 5
 private let gameCell  = "gameCell"
 private let gameHeaderCell  = "gameHeaderCell"
 
+private let kHeaderViewH : CGFloat = 140
+
+
+
 class GameViewController: UIViewController {
 
     //MARK:- lazy
@@ -26,6 +30,13 @@ class GameViewController: UIViewController {
         let gameViewModel = RecommendViewModel()
 
         return gameViewModel
+    }()
+    
+    private lazy var gameHeaderView : GameHeaderView = {
+        let gameHeaderView = GameHeaderView.gameHeaderView()
+        gameHeaderView.frame = CGRect(x: 0, y: -kHeaderViewH, width: kScreenW, height: kHeaderViewH)
+        
+        return gameHeaderView
     }()
     
     private lazy var gameVM : GameViewModel = {
@@ -41,9 +52,11 @@ class GameViewController: UIViewController {
     fileprivate lazy var collectionView : UICollectionView = {
         
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 80, height: 80)
+        layout.itemSize = CGSize(width: kItemW, height: kItemH)
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
+        //MARK:设置cell之间的距离
+        layout.sectionInset = UIEdgeInsetsMake(0, kEdgeMargin, 0, kEdgeMargin)
         //决定横向布局还是纵向布局
         layout.scrollDirection = .vertical
         //？？？
@@ -72,7 +85,11 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.purple
+        collectionView.contentInset = UIEdgeInsetsMake(kHeaderViewH, 0, 0, 0 )
+        
         view.addSubview(collectionView)
+        collectionView.addSubview(gameHeaderView)
+        
         loadData()
         
     }
@@ -94,9 +111,9 @@ extension GameViewController {
             groups.removeFirst()
             
             //添加更多组
-            let moreGroup = AnchorGroupModel()
-            moreGroup.tag_name = "更多"
-            groups.append(moreGroup)
+            //let moreGroup = AnchorGroupModel()
+            //moreGroup.tag_name = "更多"
+            //groups.append(moreGroup)
             
             self.gameGroup = groups
         }
@@ -132,8 +149,6 @@ extension GameViewController : UICollectionViewDataSource , UICollectionViewDele
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: gameCell, for: indexPath) as! CollectionViewGameCell
         cell.group = self.gameGroup![indexPath.item]
         
-        
-        
         return cell
     }
     
@@ -165,15 +180,15 @@ extension GameViewController : UICollectionViewDataSource , UICollectionViewDele
     }
     
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-        if indexPath.section == 0  {
-            
-            return CGSize(width: 80, height: 80)
-        }
-        
-        return CGSize(width: kItemW, height: kItemH)
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//
+//        if indexPath.section == 0  {
+//
+//            return CGSize(width: 80, height: 80)
+//        }
+//
+//        return CGSize(width: kItemW, height: kItemH)
+//    }
 }
 
 
