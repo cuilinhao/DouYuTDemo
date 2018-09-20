@@ -141,7 +141,7 @@ extension RecommendViewController {
         
          //请求轮播数据
         recomendViewModel.requestCycleData {
-            
+
             //self.cycleView.cycleModels = self.recommendVM.cycleModels
             
             self.cycleView.cycleModels = self.recomendViewModel.cycleGroup

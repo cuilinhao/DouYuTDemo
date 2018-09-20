@@ -31,6 +31,9 @@
 		708B979B21378DA700306476 /* AnchorGroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708B979A21378DA700306476 /* AnchorGroupModel.swift */; };
 		708B979D2137A17300306476 /* AnchorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708B979C2137A17300306476 /* AnchorModel.swift */; };
 		709664E92147F1730067562B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709664E82147F1730067562B /* GameViewController.swift */; };
+		70A291D121532E6A00DE82BE /* AmuseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A291D021532E6A00DE82BE /* AmuseViewController.swift */; };
+		70A291D321532F9C00DE82BE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A291D221532F9C00DE82BE /* BaseViewController.swift */; };
+		70A291D52153340600DE82BE /* AmuseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A291D42153340600DE82BE /* AmuseViewModel.swift */; };
 		70A7DA00214605010077A907 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A7D9F5214605010077A907 /* NetworkTools.swift */; };
 		70A7DA01214605010077A907 /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A7D9F6214605010077A907 /* UIColor-Extension.swift */; };
 		70A7DA02214605010077A907 /* ZJBarButtonItem_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A7D9F7214605010077A907 /* ZJBarButtonItem_Extension.swift */; };
@@ -86,6 +89,9 @@
 		708B979A21378DA700306476 /* AnchorGroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorGroupModel.swift; sourceTree = "<group>"; };
 		708B979C2137A17300306476 /* AnchorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorModel.swift; sourceTree = "<group>"; };
 		709664E82147F1730067562B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		70A291D021532E6A00DE82BE /* AmuseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmuseViewController.swift; sourceTree = "<group>"; };
+		70A291D221532F9C00DE82BE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		70A291D42153340600DE82BE /* AmuseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmuseViewModel.swift; sourceTree = "<group>"; };
 		70A7D9F5214605010077A907 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		70A7D9F6214605010077A907 /* UIColor-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
 		70A7D9F7214605010077A907 /* ZJBarButtonItem_Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJBarButtonItem_Extension.swift; sourceTree = "<group>"; };
@@ -228,6 +234,7 @@
 			children = (
 				708B9796213787A600306476 /* RecommendViewModel.swift */,
 				704E51B3214A015E006B3A31 /* GameViewModel.swift */,
+				70A291D42153340600DE82BE /* AmuseViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -239,6 +246,8 @@
 				7083D973212C3BE70094624C /* HomeViewController.swift */,
 				701593B82134DCA4001BFDA4 /* RecommendViewController.swift */,
 				709664E82147F1730067562B /* GameViewController.swift */,
+				70A291D021532E6A00DE82BE /* AmuseViewController.swift */,
+				70A291D221532F9C00DE82BE /* BaseViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -590,16 +599,19 @@
 				70227E7B21469DF900D91B25 /* RecommendGameView.swift in Sources */,
 				70129836213CE411004F5288 /* PageContentView.swift in Sources */,
 				70A7DA09214605010077A907 /* SwiftProgressHUD.swift in Sources */,
+				70A291D121532E6A00DE82BE /* AmuseViewController.swift in Sources */,
 				70A7DA02214605010077A907 /* ZJBarButtonItem_Extension.swift in Sources */,
 				70A7DA05214605010077A907 /* Common.swift in Sources */,
 				70A7DA06214605010077A907 /* UIBarButtonItem-Extension.swift in Sources */,
 				708B979B21378DA700306476 /* AnchorGroupModel.swift in Sources */,
+				70A291D321532F9C00DE82BE /* BaseViewController.swift in Sources */,
 				70B62E402136324600E88A67 /* CollectionViewPerttyCell.swift in Sources */,
 				70A7DA0A214605010077A907 /* ZJProgressHUD.swift in Sources */,
 				7083D972212C3B910094624C /* PageTitleView.swift in Sources */,
 				701593B92134DCA4001BFDA4 /* RecommendViewController.swift in Sources */,
 				70FE4C13212A7140005773FF /* AppDelegate.swift in Sources */,
 				70D43A122140CB030076BEEE /* ZJNetworking.swift in Sources */,
+				70A291D52153340600DE82BE /* AmuseViewModel.swift in Sources */,
 				70A7DA07214605010077A907 /* ZJDecoder.swift in Sources */,
 				701299D3213F7088004F5288 /* CycleModel.swift in Sources */,
 				7059E940213CE1620067AE6D /* CollectionViewNormalCell.swift in Sources */,

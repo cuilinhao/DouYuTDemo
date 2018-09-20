@@ -16,9 +16,14 @@ private let kItemH : CGFloat = kItemW * 6 / 5
 private let gameCell  = "gameCell"
 private let gameHeaderCell  = "gameHeaderCell"
 
-private let kHeaderViewH : CGFloat = 140
+private let kHeaderViewH : CGFloat = 130
+private let kGameViewH : CGFloat = 90
 
+//MARK:- *****************************************
+//ios 上下两个scrolleview， 上面滚动，下面也跟着滚动
+//https://www.google.com.hk/search?safe=strict&ei=KkWiW-3bCoS78QWuwK-QCA&q=ios+%E4%B8%8A%E4%B8%8B%E4%B8%A4%E4%B8%AAscrolleview%EF%BC%8C+%E4%B8%8A%E9%9D%A2%E6%BB%9A%E5%8A%A8%EF%BC%8C%E4%B8%8B%E9%9D%A2%E4%B9%9F%E8%B7%9F%E7%9D%80%E6%BB%9A%E5%8A%A8&oq=ios+%E4%B8%8A%E4%B8%8B%E4%B8%A4%E4%B8%AAscrolleview%EF%BC%8C+%E4%B8%8A%E9%9D%A2%E6%BB%9A%E5%8A%A8%EF%BC%8C%E4%B8%8B%E9%9D%A2%E4%B9%9F%E8%B7%9F%E7%9D%80%E6%BB%9A%E5%8A%A8&gs_l=psy-ab.3..33i160k1.5290.9337.0.10225.10.10.0.0.0.0.316.1315.6j3j0j1.10.0....0...1c.1j4.64.psy-ab..0.1.142....0.wXQSS0-xVIg
 
+//MARK:- ***************************************
 
 class GameViewController: UIViewController {
 
@@ -32,11 +37,21 @@ class GameViewController: UIViewController {
         return gameViewModel
     }()
     
+    //头部view
     private lazy var gameHeaderView : GameHeaderView = {
         let gameHeaderView = GameHeaderView.gameHeaderView()
         gameHeaderView.frame = CGRect(x: 0, y: -kHeaderViewH, width: kScreenW, height: kHeaderViewH)
         
         return gameHeaderView
+    }()
+    
+    //游戏的view
+    private lazy var gameView : RecommendGameView = {
+        let gameView = RecommendGameView.recommendGameView()
+        
+        gameView.frame = CGRect(x: 0, y: 40, width: kScreenW, height: kGameViewH)
+        
+        return gameView
     }()
     
     private lazy var gameVM : GameViewModel = {
@@ -90,6 +105,8 @@ class GameViewController: UIViewController {
         view.addSubview(collectionView)
         collectionView.addSubview(gameHeaderView)
         
+        gameHeaderView.addSubview(gameView)
+        
         loadData()
         
     }
@@ -116,10 +133,17 @@ extension GameViewController {
             //groups.append(moreGroup)
             
             self.gameGroup = groups
+            
+            self.gameView.gameGroup = groups
+            
         }
         
         //----
         gameVM.loadAllGameData {
+            //展示全部游戏
+            self.collectionView.reloadData()
+            //展示 天下游戏
+            self.gameView.gameGroup = Array(self.gameVM.games[0..<10])
             
         }
     }

@@ -17,7 +17,7 @@ class CollectionViewGameCell: UICollectionViewCell {
     @IBOutlet weak var lineView: UIView!
     
     //MARK:- 定义模型属性
-    var group : AnchorGroupModel? {
+    var group : BaseGameModel? {
         
         didSet {
             

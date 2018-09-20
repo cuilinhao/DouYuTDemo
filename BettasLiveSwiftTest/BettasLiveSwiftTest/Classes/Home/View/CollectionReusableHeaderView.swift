@@ -12,7 +12,7 @@ class CollectionReusableHeaderView: UICollectionReusableView {
 
     @IBOutlet weak var titleLab: UILabel!
     
-    var group : AnchorGroupModel?  {
+    var group : BaseGameModel?  {
         
         didSet {
             titleLab.text = group?.tag_name
@@ -21,7 +21,7 @@ class CollectionReusableHeaderView: UICollectionReusableView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.backgroundColor = UIColor.green
+        
     }
     
 }

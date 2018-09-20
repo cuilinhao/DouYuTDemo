@@ -14,7 +14,7 @@ class RecommendGameView: UIView {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var gameGroup : [AnchorGroupModel]? {
+    var gameGroup : [BaseGameModel]? {
         
         didSet {
             collectionView.reloadData()
