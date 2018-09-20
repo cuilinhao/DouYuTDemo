@@ -34,6 +34,7 @@
 		70A291D121532E6A00DE82BE /* AmuseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A291D021532E6A00DE82BE /* AmuseViewController.swift */; };
 		70A291D321532F9C00DE82BE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A291D221532F9C00DE82BE /* BaseViewController.swift */; };
 		70A291D52153340600DE82BE /* AmuseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A291D42153340600DE82BE /* AmuseViewModel.swift */; };
+		70A291D721533E6A00DE82BE /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A291D621533E6A00DE82BE /* BaseViewModel.swift */; };
 		70A7DA00214605010077A907 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A7D9F5214605010077A907 /* NetworkTools.swift */; };
 		70A7DA01214605010077A907 /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A7D9F6214605010077A907 /* UIColor-Extension.swift */; };
 		70A7DA02214605010077A907 /* ZJBarButtonItem_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A7D9F7214605010077A907 /* ZJBarButtonItem_Extension.swift */; };
@@ -92,6 +93,7 @@
 		70A291D021532E6A00DE82BE /* AmuseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmuseViewController.swift; sourceTree = "<group>"; };
 		70A291D221532F9C00DE82BE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		70A291D42153340600DE82BE /* AmuseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmuseViewModel.swift; sourceTree = "<group>"; };
+		70A291D621533E6A00DE82BE /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		70A7D9F5214605010077A907 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		70A7D9F6214605010077A907 /* UIColor-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
 		70A7D9F7214605010077A907 /* ZJBarButtonItem_Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJBarButtonItem_Extension.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				708B9796213787A600306476 /* RecommendViewModel.swift */,
 				704E51B3214A015E006B3A31 /* GameViewModel.swift */,
 				70A291D42153340600DE82BE /* AmuseViewModel.swift */,
+				70A291D621533E6A00DE82BE /* BaseViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -613,6 +616,7 @@
 				70D43A122140CB030076BEEE /* ZJNetworking.swift in Sources */,
 				70A291D52153340600DE82BE /* AmuseViewModel.swift in Sources */,
 				70A7DA07214605010077A907 /* ZJDecoder.swift in Sources */,
+				70A291D721533E6A00DE82BE /* BaseViewModel.swift in Sources */,
 				701299D3213F7088004F5288 /* CycleModel.swift in Sources */,
 				7059E940213CE1620067AE6D /* CollectionViewNormalCell.swift in Sources */,
 				7012983A213CEDAF004F5288 /* BaseCollectionViewCell.swift in Sources */,
