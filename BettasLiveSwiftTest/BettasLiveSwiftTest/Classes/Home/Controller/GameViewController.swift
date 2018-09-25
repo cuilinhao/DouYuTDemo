@@ -99,7 +99,7 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.purple
+        
         collectionView.contentInset = UIEdgeInsetsMake(kHeaderViewH, 0, 0, 0 )
         
         view.addSubview(collectionView)

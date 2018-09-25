@@ -28,6 +28,7 @@ class RecommendCycleView: UIView {
             //设置pageControlle个数
             pageControl.numberOfPages = cycleModels?.count ?? 0
             
+            //MARK:- ************滚动**************
             //默认滚动到中间的某一个位置
             let indexPath = NSIndexPath(item: (cycleModels?.count ?? 0) * 10, section: 0)
             collectionView.scrollToItem(at: indexPath as IndexPath, at: .left, animated: false)
@@ -74,6 +75,8 @@ class RecommendCycleView: UIView {
 //MARK:- UICollectionViewDelegate
 extension RecommendCycleView : UICollectionViewDelegate {
     
+    //MARK:- ************滚动**************
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         //获取滚动的偏移量
         let offsetX = scrollView.contentOffset.x + scrollView.bounds.width * 0.5
@@ -105,6 +108,7 @@ extension RecommendCycleView {
         
     }
     
+    //MARK:- ************滚动**************
    @objc private func scrollToNext()  {
     
     //获取滚动偏移量

@@ -26,10 +26,22 @@ private let kPerttyCell  = "kPerttyCell"
 
 private let kHeaderH : CGFloat = 50
 
+private let kMenuView : CGFloat = 200
 
 class AmuseViewController: BaseViewController {
 
     //MARK:- lazy
+    
+    fileprivate lazy var menuView : AmuseMenuView = {
+       
+        let menuView = AmuseMenuView.loadAmuseMenuView()
+        
+        menuView.frame = CGRect(x: 0, y: -kMenuView, width: kScreenW, height: kMenuView)
+        
+        return menuView
+        
+    }()
+    
     private lazy var amuseVM : AmuseViewModel = {
         
         let amuseVM = AmuseViewModel()
@@ -37,15 +49,17 @@ class AmuseViewController: BaseViewController {
         return amuseVM
     }()
     
-    
-    
     //MARK:- life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadData()
         
+        super.setupUI()
+        collectionView.addSubview(menuView)
+        collectionView.contentInset = UIEdgeInsetsMake(kMenuView, 0, 0, 0 )
     }
+    
 }
 
 //MARK:-  initUI
@@ -58,8 +72,18 @@ extension  AmuseViewController {
         //请求数据
         amuseVM.loadAmuseData {
             self.collectionView.reloadData()
+            
+            //self.menuView.groups = self.amuseVM.anchorGroups
+            
+            var groups = self.amuseVM.anchorGroups
+            groups.removeFirst()
+            
+            self.menuView.groups = groups
+            
         }
     }
+    
+    
     
 }
 

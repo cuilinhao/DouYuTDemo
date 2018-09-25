@@ -12,7 +12,6 @@ class GameViewModel: NSObject {
 
     lazy var games : [GameModel] = [GameModel]()
     
-    
 }
 
 extension GameViewModel {
