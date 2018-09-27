@@ -59,7 +59,6 @@ extension AmuseCollectionViewCell : UICollectionViewDataSource {
         cell.clipsToBounds = true
         cell.lineView.isHidden = true
         
-        
         return cell
     }
     

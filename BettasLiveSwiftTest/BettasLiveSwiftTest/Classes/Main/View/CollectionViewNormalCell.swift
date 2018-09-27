@@ -55,6 +55,10 @@ class CollectionViewNormalCell: UICollectionViewCell {
             guard let iconURL = URL(string: anchor.vertical_src) else {
                 return
             }
+            
+            picImgView.layer.cornerRadius = 5.0
+            picImgView.layer.masksToBounds = true
+            
             picImgView.kf.setImage(with: iconURL)
             
         }

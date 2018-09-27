@@ -16,7 +16,7 @@ class AmuseViewModel: BaseViewModel {
 extension AmuseViewModel {
     
     func loadAmuseData(finishedCalledBack : @escaping () -> ()) {
-        loadAnchroData(URLString: "http://capi.douyucdn.cn/api/v1/getHotRoom/2", finishedCallBack: finishedCalledBack)
+        loadAnchroData( URLString: "http://capi.douyucdn.cn/api/v1/getHotRoom/2", finishedCallBack: finishedCalledBack)
     }
     
 }

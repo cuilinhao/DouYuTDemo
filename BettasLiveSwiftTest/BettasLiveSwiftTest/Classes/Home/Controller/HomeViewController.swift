@@ -34,14 +34,18 @@ class HomeViewController: UIViewController {
         childVcs.append(RecommendViewController())
         childVcs.append(GameViewController())
         childVcs.append(AmuseViewController())
+        childVcs.append(FunnyViewController())
         
         
+        /*
         for _ in 0..<1 {
             let vc = UIViewController()
             vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
             childVcs.append(vc)
 
         }
+         */
+        
         
         let contentView = PageContentView(frame: contentFrame, childVcs: childVcs, presentViewController: self)
         contentView.delegate = self
@@ -119,7 +123,6 @@ extension HomeViewController {
         //let searchItem = UIBarButtonItem(imageName: "btn_search", heightImageName: "btn_search_clicked", size: size)
         
         //let qrcodeItem = UIBarButtonItem(imageName: "Image_scan", heightImageName: "Image_scan_click", size: size)
-        
         
         
         
