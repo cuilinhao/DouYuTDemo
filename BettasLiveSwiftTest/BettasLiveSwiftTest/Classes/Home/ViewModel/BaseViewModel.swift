@@ -20,10 +20,11 @@ class BaseViewModel: NSObject {
 
 extension BaseViewModel {
     
-    func loadAnchroData(URLString : String, parameters : [String : Any]? = nil, finishedCallBack : @escaping () -> ()) {
+    func loadAnchroData(isGroupData: Bool , URLString : String, parameters : [String : Any]? = nil, finishedCallBack : @escaping () -> ()) {
         
         NetworkTools.requestData(type: .GET, URLString: URLString) { (result) in
             
+            //1. 界面处理
             guard let resultDic = result as? [String : Any] else {
                 return
             }
@@ -31,9 +32,35 @@ extension BaseViewModel {
                 return
             }
             
+            /*
             for dict in dataArray {
                 self.anchorGroups.append(AnchorGroupModel(dict: dict))
             }
+            */
+            
+            //-----
+            //2. 判断是否分组数据
+            if isGroupData {
+                //2.1 遍历数组中的字典
+                for dict in dataArray {
+                    self.anchorGroups.append(AnchorGroupModel(dict: dict))
+                }
+            }
+            else
+            {
+                //2.1 创建组
+                let group = AnchorGroupModel()
+                
+                //2.2 遍历dataArray的所有字典
+                for dict in dataArray {
+                    group.anchors.append(AnchorModel(dict: dict as! [String : NSObject]))
+                }
+                
+                //2.3 将group ，添加到 anchorgroups
+                self.anchorGroups.append(group)
+            }
+            
+            
             
             finishedCallBack()
             

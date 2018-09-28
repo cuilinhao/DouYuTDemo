@@ -17,6 +17,16 @@ class FunnyViewController: BaseViewController {
     //MARK:- 懒加载 ViewModel 对象
     fileprivate lazy var funnyVM : FunnyViewModel = FunnyViewModel()
     
+    
+    private lazy var amuseVM : AmuseViewModel = {
+        
+        let amuseVM = AmuseViewModel()
+        
+        return amuseVM
+    }()
+    
+    
+    
 }
 
 
@@ -28,6 +38,8 @@ extension FunnyViewController {
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.headerReferenceSize = CGSize.zero
         collectionView.contentInset = UIEdgeInsets(top: kTopMargin, left: 0, bottom: 0, right: 0)
+        loadData()
+        
     }
     
 }
@@ -39,12 +51,13 @@ extension FunnyViewController {
         
         //1.给父类中的ViewModel赋值
         baseVM = funnyVM
-        
+
         //2. 请求数据
         funnyVM.loadFunnyData {
-            
+
             super.collectionView.reloadData()
         }
+        
         
     }
     
