@@ -29,6 +29,27 @@ private let kHeaderH : CGFloat = 50
 
 class BaseViewController: UIViewController {
 
+    //MARK:- 定义属性
+    var contentView : UIView?
+    
+    
+    //MARK:- lazy
+    lazy var animImageView : UIImageView = {
+        
+        let imageView = UIImageView(image: UIImage(named: "img_loading_1"))
+        imageView.center = self.view.center
+        imageView.animationImages = [UIImage(named: "img_loading_1")!, UIImage(named: "img_loading_2")!]
+        imageView.animationDuration = 0.5
+        imageView.animationRepeatCount = LONG_MAX
+        
+        imageView.autoresizingMask = [.flexibleTopMargin, .flexibleBottomMargin]
+        
+        
+        return imageView
+        
+    }()
+    
+    
     //MARK:- life cycle
     
     var baseVM : BaseViewModel!
@@ -66,9 +87,46 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupUI()
+        setAnimationUI()
+    }
+}
+
+//MARK:- 加载动画
+extension BaseViewController {
+    
+    public func setAnimationUI() {
+        
+        //隐藏内容的view
+        contentView?.isHidden = true
+        
+        // 添加执行动画的img
+        view.addSubview(animImageView)
+        
+        //执行动画
+        animImageView.startAnimating()
+        
+        view.backgroundColor = UIColor.randomColor()
+        
         
     }
+    
+    
+    func loadfinishedAnimation() {
+        
+        contentView?.isHidden = false
+        animImageView.stopAnimating()
+        
+    }
+    
+}
+
+
+extension BaseViewController {
+    
+    
+    
     
 }
 

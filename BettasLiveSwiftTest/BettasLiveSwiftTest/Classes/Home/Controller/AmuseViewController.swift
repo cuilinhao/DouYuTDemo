@@ -53,11 +53,22 @@ class AmuseViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //----设置努力加载中
+        contentView = collectionView
+        
+        super.setAnimationUI()
+        
         loadData()
         
         super.setupUI()
         collectionView.addSubview(menuView)
         collectionView.contentInset = UIEdgeInsetsMake(kMenuView, 0, 0, 0 )
+        
+        //数据加载完成，停止加载动画
+        
+        super.loadfinishedAnimation()
+        
+        
     }
     
 }
@@ -82,8 +93,6 @@ extension  AmuseViewController {
             
         }
     }
-    
-    
     
 }
 

@@ -105,8 +105,11 @@ class RecommendViewController: UIViewController {
         
         collectionView.contentInset = UIEdgeInsetsMake(kCycleViewH + kGameViewH , 0, 0, 0)
         
+        
         setupUI()
         loadData()
+        
+        
         
     }
 }

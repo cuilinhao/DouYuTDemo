@@ -9,7 +9,6 @@
 import UIKit
 
 
-
 private let kTopMargin : CGFloat = 8
 
 class FunnyViewController: BaseViewController {
@@ -17,15 +16,12 @@ class FunnyViewController: BaseViewController {
     //MARK:- 懒加载 ViewModel 对象
     fileprivate lazy var funnyVM : FunnyViewModel = FunnyViewModel()
     
-    
     private lazy var amuseVM : AmuseViewModel = {
         
         let amuseVM = AmuseViewModel()
         
         return amuseVM
     }()
-    
-    
     
 }
 
