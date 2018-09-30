@@ -56,6 +56,9 @@ class MOBCustomeNavigationViewController: UINavigationController {
          ++++++++++++_allowedPressTypes
          ++++++++++++_name
          ++++++++++++_gestureEnvironment
+         
+         
+         
          */
         for i in 0..<count {
             let ivar = ivars[Int(i)]
