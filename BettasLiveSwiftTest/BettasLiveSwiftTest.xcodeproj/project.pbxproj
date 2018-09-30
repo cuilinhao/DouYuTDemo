@@ -10,6 +10,8 @@
 		260AA72B09DD545F90B99039 /* Pods_BettasLiveSwiftTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DC958A23F6576F6AD7AB304 /* Pods_BettasLiveSwiftTest.framework */; };
 		700255AD2159D1B6002B8C20 /* FunnyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700255AC2159D1B6002B8C20 /* FunnyViewController.swift */; };
 		70025C87215C724E002B8C20 /* FunnyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70025C86215C724E002B8C20 /* FunnyViewModel.swift */; };
+		70025CA3215F0ECB002B8C20 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70025CA2215F0ECB002B8C20 /* RoomViewController.swift */; };
+		70025CA5215F146C002B8C20 /* MOBCustomeNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70025CA4215F146C002B8C20 /* MOBCustomeNavigationViewController.swift */; };
 		70129836213CE411004F5288 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70129835213CE411004F5288 /* PageContentView.swift */; };
 		7012983A213CEDAF004F5288 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70129839213CEDAF004F5288 /* BaseCollectionViewCell.swift */; };
 		701299D3213F7088004F5288 /* CycleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701299D2213F7088004F5288 /* CycleModel.swift */; };
@@ -75,6 +77,8 @@
 		4DC958A23F6576F6AD7AB304 /* Pods_BettasLiveSwiftTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BettasLiveSwiftTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		700255AC2159D1B6002B8C20 /* FunnyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunnyViewController.swift; sourceTree = "<group>"; };
 		70025C86215C724E002B8C20 /* FunnyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunnyViewModel.swift; sourceTree = "<group>"; };
+		70025CA2215F0ECB002B8C20 /* RoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
+		70025CA4215F146C002B8C20 /* MOBCustomeNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOBCustomeNavigationViewController.swift; sourceTree = "<group>"; };
 		70129835213CE411004F5288 /* PageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
 		70129839213CEDAF004F5288 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		701299D2213F7088004F5288 /* CycleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleModel.swift; sourceTree = "<group>"; };
@@ -265,6 +269,7 @@
 				70A291D021532E6A00DE82BE /* AmuseViewController.swift */,
 				70A291D221532F9C00DE82BE /* BaseViewController.swift */,
 				700255AC2159D1B6002B8C20 /* FunnyViewController.swift */,
+				70025CA2215F0ECB002B8C20 /* RoomViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -407,6 +412,7 @@
 			children = (
 				70FE4C16212A7140005773FF /* Main.storyboard */,
 				70FE4C6D212BA700005773FF /* MainViewController.swift */,
+				70025CA4215F146C002B8C20 /* MOBCustomeNavigationViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -511,6 +517,7 @@
 		70FE4C07212A713F005773FF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = MOB;
 				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "崔林豪";
@@ -641,6 +648,7 @@
 				70A291D52153340600DE82BE /* AmuseViewModel.swift in Sources */,
 				70A7DA07214605010077A907 /* ZJDecoder.swift in Sources */,
 				70A291D721533E6A00DE82BE /* BaseViewModel.swift in Sources */,
+				70025CA5215F146C002B8C20 /* MOBCustomeNavigationViewController.swift in Sources */,
 				701299D3213F7088004F5288 /* CycleModel.swift in Sources */,
 				7059E940213CE1620067AE6D /* CollectionViewNormalCell.swift in Sources */,
 				7012983A213CEDAF004F5288 /* BaseCollectionViewCell.swift in Sources */,
@@ -655,6 +663,7 @@
 				7083D974212C3BE70094624C /* HomeViewController.swift in Sources */,
 				70A7DA0D21460B8D0077A907 /* CollectionViewCycleCell.swift in Sources */,
 				70B62E362135781900E88A67 /* CollectionReusableHeaderView.swift in Sources */,
+				70025CA3215F0ECB002B8C20 /* RoomViewController.swift in Sources */,
 				70A7DA04214605010077A907 /* ZJView-Extension.swift in Sources */,
 				708B9797213787A600306476 /* RecommendViewModel.swift in Sources */,
 				708B979D2137A17300306476 /* AnchorModel.swift in Sources */,

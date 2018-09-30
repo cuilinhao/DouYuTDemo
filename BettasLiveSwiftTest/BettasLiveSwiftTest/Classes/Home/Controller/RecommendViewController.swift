@@ -234,6 +234,37 @@ extension  RecommendViewController : UICollectionViewDataSource ,UICollectionVie
     }
   
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        print("-------->>>>>>>>>\(indexPath.section, indexPath.row)")
+        
+        //1. 取出对应的主播信息
+        let anchor = recomendViewModel.anchorGroup[indexPath.section].anchors[indexPath.item]
+        
+        //2. 判断是秀场房间 & 普通房间
+        anchor.isVertical == 0 ? pushNormalRoomVc() : presentShowRoomVc()
+        
+    }
+    
+    private func presentShowRoomVc() {
+        
+        //1. 创建ShowRoomVc
+        let showRoomVC = RoomViewController()
+        
+        //2.以Modal 方法弹出
+        self.present(showRoomVC, animated: true, completion: nil)
+    }
+    
+    private func pushNormalRoomVc() {
+        
+        //1. 创建normalRoomVC
+        let normalRoomVc = RoomViewController()
+        
+        //push 方式弹出
+        navigationController?.pushViewController(normalRoomVc, animated: true)
+    }
+    
+    
 }
 
 

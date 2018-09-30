@@ -204,15 +204,33 @@ extension GameViewController : UICollectionViewDataSource , UICollectionViewDele
     }
     
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//
-//        if indexPath.section == 0  {
-//
-//            return CGSize(width: 80, height: 80)
-//        }
-//
-//        return CGSize(width: kItemW, height: kItemH)
-//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        print("-------->>>>>>>>>\(indexPath.section, indexPath.row)")
+        
+        pushNormalRoomVc()
+        
+    }
+    
+    private func presentShowRoomVc() {
+        
+        //1. 创建ShowRoomVc
+        let showRoomVC = RoomViewController()
+        
+        //2.以Modal 方法弹出
+        self.present(showRoomVC, animated: true, completion: nil)
+    }
+    
+    private func pushNormalRoomVc() {
+        
+        //1. 创建normalRoomVC
+        let normalRoomVc = RoomViewController()
+        
+        //push 方式弹出
+        navigationController?.pushViewController(normalRoomVc, animated: true)
+    }
+    
+    
 }
 
 

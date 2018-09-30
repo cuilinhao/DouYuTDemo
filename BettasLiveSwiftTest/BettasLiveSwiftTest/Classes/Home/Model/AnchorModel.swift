@@ -44,7 +44,7 @@ class AnchorModel: NSObject {
    @objc var vertical_src : String = ""
     /// 判断是手机直播还是电脑直播
     // 0 : 电脑直播(普通房间) 1 : 手机直播(秀场房间)
-   //@objc var isVertical : Int = 0
+   @objc var isVertical : Int = 0
     /// 房间名称
    @objc var room_name : String = ""
     /// 主播昵称
@@ -53,8 +53,6 @@ class AnchorModel: NSObject {
    @objc var online : Int = 0
     /// 所在城市
    //@objc var anchor_city : String = ""
-    
-    
     
     init(dict : [String : NSObject]) {
         super.init()
@@ -91,8 +89,6 @@ class slideListModel: NSObject {
     @objc var title : String = ""
     
     @objc var vertical_src : String = ""
-    
-    
     
     init(dict : [String : NSObject]) {
         super.init()
