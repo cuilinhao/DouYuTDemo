@@ -10,6 +10,18 @@ import UIKit
 
 private let kTitleViewH : CGFloat = 40
 
+/*
+ 编码方式
+ 硬编码: 使用非CPU进行编码，如显卡GPU
+ 软编码:使用CPU进行编码(手机容易发热)
+ 
+ -----
+ 采集视频
+ 
+
+ 
+ 
+ */
 
 class HomeViewController: UIViewController {
 
