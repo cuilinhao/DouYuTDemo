@@ -149,72 +149,107 @@ extension RecommendViewModel {
 
     //MARK:- ？？？？？？？？？？
     //请求轮播数据
-    func requestCycleData(finishCallback : @escaping () -> ()) {
-        
-         //ZJNetWorking.requestData(type: .GET, URlString: ZJCateBannerURL, parameters: ["version" : "2.300"]) { (response) in
-         //print("+++++++++轮播数据+++111++\(response)")
-         //}
-        
-        // 配置 HTTPHeaders
-        let headers: HTTPHeaders = [
-            "Content-Type": "application/json",
-            "charset":"utf-8",
-            ]
-        
-        Alamofire.request(ZJCateBannerURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
-        
-            guard let result = response.result.value else {
-                print(response.result.error ?? "错误")
-                return
-            }
-            
-            guard let dict = result as? [String : Any] else {
-                return
-            }
-            
-             print("+++++>>>>>>>>>+0000++\(dict)")
-            
-            
-            /*
-             guard let dataArray = resultDic["data"] as? [[String : Any]]  else {
-             return
-             }
-             
-             for dict in dataArray {
-             let group = AnchorGroupModel(dict: dict)
-             self.anchorGroup.append(group)
-             }
-             
-             for group in self.anchorGroup {
-             for anchor in group.anchors {
-             print("++++++++" + anchor.nickname)
-             }
-             }
-             
-             */
-            
-            guard let dataDic = dict["data"] as? [String : Any] else {
-                return
-            }
-            
-            guard let dataArray = dataDic["slide_list"] as? [[String : Any]] else {
-                return
-            }
-
-            for dic in dataArray {
-
-                let group = slideListModel(dict: dic as! [String : NSObject])
-                self.cycleGroup.append(group)
-            }
-            
-            print("------ccccc-----\(self.cycleGroup.count)")
-            
-            
-            finishCallback()
-        }
-    }
-    
-    //请求推荐游戏的接口
+	func requestCycleData(finishCallback : @escaping () -> ()) {
+		
+		//ZJNetWorking.requestData(type: .GET, URlString: ZJCateBannerURL, parameters: ["version" : "2.300"]) { (response) in
+		//print("+++++++++轮播数据+++111++\(response)")
+		//}
+		
+		// 配置 HTTPHeaders
+		let headers: HTTPHeaders = [
+			"Content-Type": "application/json",
+			"charset":"utf-8",
+			]
+		
+		Alamofire.request(ZJCateBannerURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+			
+			
+			//可变数组
+			var dataArray = [Any]()
+			
+			var dict1 : [String : Any]  = [String : Any]()
+			
+			
+			dict1["title"] = "测试1"
+			dict1["resource"] = "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3441742992,2765570575&fm=27&gp=0.jpg"
+			
+			var dict2 : [String : Any]  = [String : Any]()
+			
+			
+			dict2["title"] = "测试2"
+			dict2["resource"] = "https://gss0.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/zhidao/wh%3D600%2C800/sign=0c7a1c4ad343ad4ba67b4ec6b2327697/d058ccbf6c81800acc9168e1b33533fa838b47ed.jpg"
+			
+			var dict3 : [String : Any]  = [String : Any]()
+			
+			
+			dict3["title"] = "测试3"
+			dict3["resource"] = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561562924321&di=73a0b6dce1fa5cc4db467386d797070c&imgtype=0&src=http%3A%2F%2Fimg0.ph.126.net%2FWPoHgfhyqEjUG_HP2AK7ow%3D%3D%2F6631872608210454282.jpg"
+			
+			dataArray.append(dict1)
+			dataArray.append(dict2)
+			dataArray.append(dict3)
+			
+			
+			for dic in dataArray {
+				
+				let group = slideListModel(dict: dic as! [String : NSObject])
+				self.cycleGroup.append(group)
+			}
+			
+			print("------ccccc-----\(self.cycleGroup.count)")
+			finishCallback()
+		}
+	}
+	
+	func requestCycleData2(finishCallback : @escaping () -> ()) {
+		
+		//ZJNetWorking.requestData(type: .GET, URlString: ZJCateBannerURL, parameters: ["version" : "2.300"]) { (response) in
+		//print("+++++++++轮播数据+++111++\(response)")
+		//}
+		
+		// 配置 HTTPHeaders
+		let headers: HTTPHeaders = [
+			"Content-Type": "application/json",
+			"charset":"utf-8",
+			]
+		
+		Alamofire.request(ZJCateBannerURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+			
+			guard let result = response.result.value else {
+				print(response.result.error ?? "错误")
+				return
+			}
+			
+			guard let dict = result as? [String : Any] else {
+				return
+			}
+			
+			print("+++++>>>>>>>>>+0000++\(dict)")
+			
+			
+			
+			guard let dataDic = dict["data"] as? [String : Any] else {
+				return
+			}
+			
+			guard let dataArray = dataDic["slide_list"] as? [[String : Any]] else {
+				return
+			}
+			
+			
+			
+			for dic in dataArray {
+				
+				let group = slideListModel(dict: dic as! [String : NSObject])
+				self.cycleGroup.append(group)
+			}
+			
+			print("------ccccc-----\(self.cycleGroup.count)")
+			
+			
+			finishCallback()
+		}
+	}
     
     
         
