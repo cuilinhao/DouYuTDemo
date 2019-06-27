@@ -27,15 +27,12 @@ class CollectionViewCycleCell: UICollectionViewCell {
             guard let iconURL = URL(string: (cycleModel?.resource)!) else {
                 return
             }
-            //cycleBGImg.kf.setImage(with: iconURL)
+            cycleBGImg.kf.setImage(with: iconURL)
             
-            cycleBGImg.image = UIImage.init(named: "scroll011")
+            //cycleBGImg.image = UIImage.init(named: "scroll011")
 
         }
     }
-    
-    
-    //cycleBGImg.image = UIImage.init(named: "scroll011")
     
     
     
