@@ -37,7 +37,7 @@ class RecommendViewController: UIViewController {
         return recomendViewModel
     }()
     
-    
+    //MARK:>>>>>>>> 轮播view
     private lazy var cycleView : RecommendCycleView = {
         
        let cycleView = RecommendCycleView.recommendCycleView()
@@ -46,7 +46,7 @@ class RecommendViewController: UIViewController {
         return cycleView
     }()
     
-    
+    //MARK:>>>>>>>> collectionView
     private lazy var collectionView : UICollectionView = {
        //---创建布局---
        let collectionLayout = UICollectionViewFlowLayout()
@@ -65,9 +65,7 @@ class RecommendViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        
         //collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kNormalCell)
-        
         //注册表头
        //collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kHeaderView)
 
@@ -85,7 +83,7 @@ class RecommendViewController: UIViewController {
         
     }()
     
-    //游戏的view
+    //MARK:>>>>>>>>游戏的view 轮播图下面的
     private lazy var gameView : RecommendGameView = {
         let gameView = RecommendGameView.recommendGameView()
         
@@ -103,8 +101,7 @@ class RecommendViewController: UIViewController {
         collectionView.addSubview(cycleView)
         collectionView.addSubview(gameView)
         
-        collectionView.contentInset = UIEdgeInsetsMake(kCycleViewH + kGameViewH , 0, 0, 0)
-        
+        collectionView.contentInset = UIEdgeInsetsMake(kCycleViewH + kGameViewH, 0, 0, 0)
         setupUI()
         loadData()
         
@@ -112,12 +109,12 @@ class RecommendViewController: UIViewController {
 }
 
 //MARK:- 加载数据
-
 extension RecommendViewController {
     
     //请求推荐数据
     private func loadData () {
         
+        //请求推荐数据
         recomendViewModel.requestData {
             self.collectionView.reloadData()
             
@@ -136,15 +133,16 @@ extension RecommendViewController {
             self.gameView.gameGroup = groups
             
             print("---game data---->>>\(groups.count)")
-            
         }
         
          //请求轮播数据
         recomendViewModel.requestCycleData {
             
-            //self.cycleView.cycleModels = self.recommendVM.cycleModels
-            
             self.cycleView.cycleModels = self.recomendViewModel.cycleGroup
+            
+            //---
+            // let model1 = slideListModel(dict: ["String" : "NSObject"])
+           //var arrayM = [Any]()
             
             print("请求轮播数据完成----\(String(describing: self.cycleView.cycleModels?.count))")
         }

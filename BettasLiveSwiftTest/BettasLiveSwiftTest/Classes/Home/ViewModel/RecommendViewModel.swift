@@ -42,15 +42,10 @@ extension RecommendViewModel {
 }
 
 extension RecommendViewModel {
-    //func requestData(_ finishedCallback : @escaping (_ jsonData : [AnyObject]) -> ()) {
+    
     func requestData(_ finishedCallback : @escaping () -> ()) {
         
-        //let parameters = ["limit" : "4", "offset" : "0", "time" : NSDate.getCurrentTime()]
-        
-        
         let parameters = ["limit" : "4", "offset" : "0", "time" : self.getCurrentTime()]
-        
-        
         //创建group
         let dispatchGroup = DispatchGroup()
         
@@ -69,8 +64,6 @@ extension RecommendViewModel {
             //let group = AnchorGroupModel()
             //group.tag_name = "热门";
             self.bigDataGroup.tag_name = "热门"
-            
-            
             for dict in dataArray {
                 
                 let anchor = AnchorModel(dict: dict)
@@ -88,6 +81,11 @@ extension RecommendViewModel {
             guard let resultDict = result as? [String : NSObject] else {
                 return
             }
+            
+            
+             print("____________请求颜值数据_______+\(resultDict)")
+            
+            
             //获取数组
             guard let dataArray = resultDict["data"] as? [[String : NSObject]] else {
                 return
@@ -109,7 +107,7 @@ extension RecommendViewModel {
         }
         
         //请求游戏数据
-         dispatchGroup.enter()
+        dispatchGroup.enter()
         NetworkTools.requestData(type: .GET, URLString: "http://capi.douyucdn.cn/api/v1/getHotCate", parameters: ["limit" : "4", "offset" : "0", "time" : self.getCurrentTime() as NSString]) { (response) in
             
             
@@ -118,9 +116,12 @@ extension RecommendViewModel {
                 return
             }
             
+            
             guard let dataArray = resultDic["data"] as? [[String : Any]]  else {
                 return
             }
+            
+            
             
             for dict in dataArray {
                 let group = AnchorGroupModel(dict: dict)
@@ -151,10 +152,6 @@ extension RecommendViewModel {
     //请求轮播数据
     func requestCycleData(finishCallback : @escaping () -> ()) {
         
-         //ZJNetWorking.requestData(type: .GET, URlString: ZJCateBannerURL, parameters: ["version" : "2.300"]) { (response) in
-         //print("+++++++++轮播数据+++111++\(response)")
-         //}
-        
         // 配置 HTTPHeaders
         let headers: HTTPHeaders = [
             "Content-Type": "application/json",
@@ -174,24 +171,6 @@ extension RecommendViewModel {
             
              print("+++++>>>>>>>>>+0000++\(dict)")
             
-            
-            /*
-             guard let dataArray = resultDic["data"] as? [[String : Any]]  else {
-             return
-             }
-             
-             for dict in dataArray {
-             let group = AnchorGroupModel(dict: dict)
-             self.anchorGroup.append(group)
-             }
-             
-             for group in self.anchorGroup {
-             for anchor in group.anchors {
-             print("++++++++" + anchor.nickname)
-             }
-             }
-             
-             */
             
             guard let dataDic = dict["data"] as? [String : Any] else {
                 return
